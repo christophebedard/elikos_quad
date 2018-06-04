@@ -1,4 +1,4 @@
-#!/bin/bash
+#! /bin/sh -
 
 # create lttng session
 lttng create ros-tracing-test-1
@@ -15,10 +15,9 @@ LD_PRELOAD=/usr/lib/x86_64-linux-gnu/liblttng-ust-cyg-profile.so
 # launch
 roslaunch elikos_sim decisionmaking2018_sim.launch &
 
-# wait a bit
-SLEEP_TIME=20
-echo "waiting $SLEEP_TIME..."
-sleep $SLEEP_TIME
+# wait
+echo "waiting for <enter>..."
+read a
 
 # kill
 echo "killing"
